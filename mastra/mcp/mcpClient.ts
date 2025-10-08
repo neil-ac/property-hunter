@@ -9,7 +9,7 @@ export const mcpClient = new MCPClient({
     id: "mcp-client",
     servers: {
       "resend-email": {
-        url: new URL("https://send-email-mcp-6f0ec13f.alpic.live/mcp"),
+        url: new URL("http://127.0.0.1:8000/mcp"),
         requestInit: {
           headers: {
             "X-RESEND-API-KEY": process.env.RESEND_API_KEY || "",
