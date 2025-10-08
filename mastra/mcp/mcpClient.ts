@@ -10,15 +10,13 @@ export const mcpClient = new MCPClient({
     id: "mcp-client",
     servers: {
       "resend-email": {
-        // Use stdio transport for locally installed MCP servers
-        command: "node",
-        args: [path.resolve(process.cwd(), "../mcp-send-email/build/index.js")],
-        env: {
-          // Add your Resend API key here
-          RESEND_API_KEY: process.env.RESEND_API_KEY || "",
-          SENDER_EMAIL_ADDRESS: process.env.SENDER_EMAIL_ADDRESS || "",
-        },
-        enableServerLogs: true,
+        url: new URL("https://send-email-mcp-6f0ec13f.alpic.live/mcp"),
+        requestInit: {
+          headers: {
+            "X-RESEND-API-KEY": process.env.RESEND_API_KEY || "",
+            "X-SENDER-EMAIL": process.env.SENDER_EMAIL_ADDRESS || "",
+          },
+        }
       },
       "melo-estate-search": {
         url: new URL("https://property-search-mcp-93912262.alpic.live/mcp"),
