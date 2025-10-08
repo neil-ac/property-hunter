@@ -27,6 +27,6 @@ export const propertyHunterAgent = new Agent({
       - When using Melo tools, still follow the approval workflow
       - Present property listings clearly before anything else
       `,
-  model: openai("gpt-5-nano"),
+  model: openai("gpt-5-mini"),
   tools: mcpTools,
 });
