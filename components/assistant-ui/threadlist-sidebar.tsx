@@ -19,23 +19,19 @@ export function ThreadListSidebar({
   return (
     <Sidebar {...props}>
       <SidebarHeader className="aui-sidebar-header mb-2 border-b">
-        <div className="aui-sidebar-header-content flex items-center justify-between">
-          <SidebarMenu>
-            <SidebarMenuItem>
-              <SidebarMenuButton size="lg" asChild>
+        <div className="aui-sidebar-header-content flex items-center justify-center w-full">
+          <SidebarMenu className="w-full">
+            <SidebarMenuItem className="w-full flex justify-center">
+              <SidebarMenuButton size="lg" asChild className="w-full justify-center">
                 <Link
-                  href="https://assistant-ui.com"
+                  href="https://alpic.ai"
                   target="_blank"
                   rel="noopener noreferrer"
+                  className="flex justify-center"
                 >
-                  <div className="aui-sidebar-header-icon-wrapper flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                    <MessagesSquare className="aui-sidebar-header-icon size-4" />
-                  </div>
-                  <div className="aui-sidebar-header-heading mr-6 flex flex-col gap-0.5 leading-none">
-                    <span className="aui-sidebar-header-title font-semibold">
-                      assistant-ui
-                    </span>
-                  </div>
+                  <span className="aui-sidebar-header-title font-bold text-2xl">
+                    Deployed on Alpic
+                  </span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -51,7 +47,7 @@ export function ThreadListSidebar({
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
               <Link
-                href="https://github.com/assistant-ui/assistant-ui"
+                href="https://github.com/neil-ac/property-hunter"
                 target="_blank"
               >
                 <div className="aui-sidebar-footer-icon-wrapper flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
