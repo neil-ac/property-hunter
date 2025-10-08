@@ -16,6 +16,7 @@ export const mcpClient = new MCPClient({
         env: {
           // Add your Resend API key here
           RESEND_API_KEY: process.env.RESEND_API_KEY || "",
+          SENDER_EMAIL_ADDRESS: process.env.SENDER_EMAIL_ADDRESS || "",
         },
         enableServerLogs: true,
       },
