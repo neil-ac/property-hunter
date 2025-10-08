@@ -22,6 +22,11 @@ export const mcpClient = new MCPClient({
       },
       "melo-estate-search": {
         url: new URL("https://property-search-mcp-93912262.alpic.live/mcp"),
+        requestInit: {
+          headers: {
+            "X-API-KEY": process.env.MELO_API_KEY || "",
+          },
+        },
       },
     },
   });
