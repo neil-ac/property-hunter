@@ -14,6 +14,8 @@ This project uses a Mastra agent powered by OpenAI to help you find and manage p
 
 ```bash
 OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  # Optional: For email capabilities
+MELO_API_KEY="your_api_key_here"  # Optional: For property search in France
 ```
 
 ### Running the Agent
@@ -76,6 +78,43 @@ For detailed setup instructions, see the [Resend MCP Server documentation](https
 RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
+### Property Search Capabilities - Melo API MCP Server
+
+The [Property Search MCP Server](https://github.com/neil-ac/property-search-mcp) enables your agent to search for real estate properties in France using the Melo (notif.immo) API.
+
+**What the agent can do:**
+- Search for apartments and houses for sale or rent
+- Filter by price range, surface area, and location
+- Search by French zip codes
+- Filter by number of bedrooms
+- Calculate and filter by price per square meter
+- Sort results by price, price per meter, or recently updated
+- Paginate through search results
+
+**Example prompts:**
+
+*"Find apartments for sale in Paris 11th arrondissement with at least 2 bedrooms under 500,000€"*
+
+*"Show me houses for rent in Paris with a minimum of 80m² surface area"*
+
+*"Search for properties in the 75018 zip code sorted by price per meter"*
+
+#### Setup
+
+This MCP server is deployed and ready to use - no local installation required!
+
+**Step 1: Get your Melo API Key:**
+
+Obtain a Melo API key from [notif.immo](https://www.notif.immo/).
+
+**Step 2: Add your Melo API key to `.env`:**
+
+```bash
+MELO_API_KEY="your_api_key_here"
+```
+
+The server is already configured in `mastra/mcp/mcpClient.ts` and will automatically connect when you provide the API key.
+
 ## Project Structure
 
 ```
@@ -97,3 +136,4 @@ property-hunter/
 - [assistant-ui Documentation](https://github.com/Yonom/assistant-ui)
 - [MCP Protocol](https://modelcontextprotocol.io)
 - [Resend MCP Server](https://github.com/resend/mcp-send-email)
+- [Property Search MCP Server](https://github.com/neil-ac/property-search-mcp)
