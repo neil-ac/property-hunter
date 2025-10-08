@@ -1,12 +1,24 @@
-import { openai } from "@ai-sdk/openai";
-import { streamText, UIMessage, convertToModelMessages } from "ai";
-
+import { mastra } from "@/mastra"; // Adjust the import path if necessary
+import { convertToModelMessages, createUIMessageStream, createUIMessageStreamResponse } from "ai";
+// Allow streaming responses up to 30 seconds
+export const maxDuration = 30;
 export async function POST(req: Request) {
-  const { messages }: { messages: UIMessage[] } = await req.json();
-  const result = streamText({
-    model: openai("gpt-5-nano"),
-    messages: convertToModelMessages(messages),
-  });
+  // Extract the messages from the request body
+  const { messages } = await req.json();
 
-  return result.toUIMessageStreamResponse();
+  const agent = mastra.getAgent("propertyHunterAgent");
+
+  // Stream the response using the agent with AI SDK format
+  const result = await agent.stream(convertToModelMessages(messages), {
+    format: "aisdk",
+    onError: ({ error }: { error: any }) => {
+      console.error("Mastra stream onError", error);
+    },
+  });
+  
+  // Return the result as a text stream response
+  return createUIMessageStreamResponse({
+    stream: result.toUIMessageStream(),
+  });
+  
 }
