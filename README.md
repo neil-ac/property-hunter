@@ -36,7 +36,7 @@ This property hunter agent's capabilities are extendend by connecting MCP server
 
 ### Email Capabilities - Resend MCP Server
 
-The [Resend MCP Server](https://github.com/resend/mcp-send-email) enables your agent to compose and send emails directly.
+The [Resend MCP Server](https://github.com/neil-ac/send-email-mcp) enables your agent to compose and send emails directly using the [Resend](https://resend.com) email API.
 
 **What the agent can do:**
 - Send plain text and HTML emails
@@ -53,30 +53,23 @@ The [Resend MCP Server](https://github.com/resend/mcp-send-email) enables your a
 
 *"Schedule an email to remind me tomorrow morning about following up with the landlord of that Brooklyn loft."*
 
-#### Installation
+#### Setup
 
-**Step 1: Clone and build the MCP server** :
-```bash
-cd ../
-git clone https://github.com/resend/mcp-send-email.git
-cd mcp-send-email
-npm install
-npm run build
-```
+This MCP server is deployed and ready to use - no local installation required!
 
-> **Important:** The MCP server path in `mastra/mcp/mcpClient.ts` is relative (`../mcp-send-email/build/index.js`). If you install it elsewhere, update the path to an absolute path pointing to your installation.
+**Step 1: Get your Resend API Key:**
 
-For detailed setup instructions, see the [Resend MCP Server documentation](https://github.com/resend/mcp-send-email).
-
-**Step 2 (Optional): Setup Resend:**
 1. Create a free account at [resend.com](https://resend.com)
 2. Create an API Key
 3. (Optional) Verify your domain to send to any email address
 
-**Step 3: Add your Resend API key to `.env`:**
+**Step 2: Add your Resend API key to `.env`:**
+
 ```bash
 RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
+
+The server is already configured in `mastra/mcp/mcpClient.ts` and will automatically connect when you provide the API key.
 
 ### Property Search Capabilities - Melo API MCP Server
 
