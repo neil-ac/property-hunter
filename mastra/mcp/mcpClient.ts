@@ -19,5 +19,8 @@ export const mcpClient = new MCPClient({
         },
         enableServerLogs: true,
       },
+      "melo-estate-search": {
+        url: new URL("https://property-search-mcp-93912262.alpic.live/mcp"),
+      },
     },
   });

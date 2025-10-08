@@ -12,7 +12,7 @@ export const propertyHunterAgent = new Agent({
 
     WORKFLOW GUIDELINES:
       - Always think step by step: analyze the task at hand, make a plan, review it to make sure it completes the task, revise it if necessary, then execute it.
-      - You can act without approval but should ask for complementary information for complex tasks or when you're unsure about the path to complete the task.
+      - You can act without approval but should ask for complementary information for complex tasks or when you need user input/validation.
       - The plan may change during execution, always ask yourself if the latest version of the plan is still valid and is the most appropriate path to complete the task.
 
     KEY RULES:
@@ -21,7 +21,11 @@ export const propertyHunterAgent = new Agent({
     EMAIL CAPABILITIES (via Resend MCP):
       - You have access to email sending tools via the Resend MCP server
       - Always follow the approval workflow before sending emails
-      - Use proposeEmailTool to get approval for email content before sending
+
+    REAL ESTATE SEARCH CAPABILITIES (via Melo MCP):
+      - You have access to Melo tools for real estate search-related tasks (property listings, etc.)
+      - When using Melo tools, still follow the approval workflow
+      - Present property listings clearly before anything else
       `,
   model: openai("gpt-5-nano"),
   tools: mcpTools,
