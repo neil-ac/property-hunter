@@ -19,18 +19,19 @@ export function ThreadListSidebar({
   return (
     <Sidebar {...props}>
       <SidebarHeader className="aui-sidebar-header mb-2 border-b">
-        <div className="aui-sidebar-header-content flex items-center justify-center w-full">
-          <SidebarMenu className="w-full">
-            <SidebarMenuItem className="w-full flex justify-center">
-              <SidebarMenuButton size="lg" asChild className="w-full justify-center">
+        <div className="aui-sidebar-header-content flex items-center justify-between">
+          <SidebarMenu>
+            <SidebarMenuItem>
+              <SidebarMenuButton size="lg" asChild>
                 <Link
                   href="https://alpic.ai"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex justify-center"
                 >
-                  <span className="aui-sidebar-header-title font-bold text-2xl">
-                    Deployed on Alpic
+
+                  <span className="aui-sidebar-header-title font-bold text-l">
+                    Deploy your MCP server here
                   </span>
                 </Link>
               </SidebarMenuButton>

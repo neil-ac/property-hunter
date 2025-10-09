@@ -15,6 +15,7 @@ This project uses a Mastra agent powered by OpenAI to help you find and manage p
 ```bash
 OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx  # Optional: For email capabilities
+SENDER_EMAIL_ADDRESS=sender.address@your-domain.com  # Optional: Verified email address to send email from
 MELO_API_KEY="your_api_key_here"  # Optional: For property search in France
 ```
 
@@ -63,11 +64,14 @@ This MCP server is deployed and ready to use - no local installation required!
 2. Create an API Key
 3. (Optional) Verify your domain to send to any email address
 
-**Step 2: Add your Resend API key to `.env`:**
+**Step 2: Add your Resend API key and sender email to `.env`:**
 
 ```bash
 RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+SENDER_EMAIL_ADDRESS=your-email@example.com  # The email address you want to send from
 ```
+
+**Note:** Your sender email must be verified in Resend.
 
 The server is already configured in `mastra/mcp/mcpClient.ts` and will automatically connect when you provide the API key.
 
