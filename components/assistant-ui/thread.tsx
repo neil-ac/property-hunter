@@ -120,12 +120,12 @@ const ThreadSuggestions: FC = () => {
         {
           title: "Find me an apartment",
           label: "in the center of Paris",
-          action: "Find me an apartment in the center of Paris",
+          action: "Find me an apartment in the center of Paris, 11th arrondissement, for rent, under 1000€",
         },
         {
           title: "Send an email",
           label: "to this real estate agency",
-          action: "Send an email to this real estate agency",
+          action: "Send an email to this real estate agency, contact@alpic.ai, about an apartment they have for sale",
         },
       ].map((suggestedAction, index) => (
         <m.div
