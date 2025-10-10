@@ -120,7 +120,7 @@ const ThreadSuggestions: FC = () => {
         {
           title: "Find me an apartment",
           label: "in the center of Paris",
-          action: "Find me an apartment in the center of Paris, 11th arrondissement, for rent, under 1000€",
+          action: "Find me an apartment in the center of Paris, 11th arrondissement, for rent, under 1000€, return only the best 3 options",
         },
         {
           title: "Send an email",
