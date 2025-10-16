@@ -4,10 +4,10 @@ import { mcpClient } from "../mcp/mcpClient";
 
 export const readMCPResourceTool = createTool({
   id: "read-mcp-resource",
-  description: "Read content from MCP resources. For URI resource templates with parameters (e.g., 'email-template://property-inquiry/{property_reference}'), provide the full URI with values substituted.",
+  description: "Read content from MCP resources and resource templates. Use this tool to fetch the actual content after identifying available resources/templates using the list tool. For static resources, provide the exact URI (e.g., 'greetings://welcome'). For resource templates with parameters (e.g., 'greetings://{name}'), substitute the parameters with actual values (e.g., 'greetings://Neil').",
   inputSchema: z.object({
-    serverName: z.string().describe("MCP server name (e.g., 'resend-email')"),
-    uri: z.string().describe("Full resource URI with parameters substituted (e.g., 'email-template://property-inquiry/ABC123')")
+    serverName: z.string().describe("MCP server name (e.g., 'my-mcp-server')"),
+    uri: z.string().describe("Resource URI. For static resources, use the exact URI from the list. For templates, substitute parameters with actual values (e.g., replace '{name}' with 'Neil')")
   }),
   outputSchema: z.object({
     content: z.any().describe("Parsed content (JSON if mimeType is application/json, otherwise raw text/blob)")

@@ -1,6 +1,7 @@
 import { openai } from "@ai-sdk/openai";
 import { Agent } from "@mastra/core/agent";
 import { mcpClient } from "../mcp/mcpClient";
+import { listMCPResourcesTool } from "../tools/listMCPResourcesTool";
 import { readMCPResourceTool } from "../tools/readMCPResourceTool";
 
 // Get sender email from environment variables
@@ -34,5 +35,5 @@ export const propertyHunterAgent = new Agent({
       - Present property listings clearly before anything else
       `,
   model: openai("gpt-4o-mini"),
-  tools: {readMCPResourceTool, ...mcpTools},
+  tools: {listMCPResourcesTool, readMCPResourceTool, ...mcpTools},
 });
