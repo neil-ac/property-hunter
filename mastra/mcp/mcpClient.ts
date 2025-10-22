@@ -16,7 +16,7 @@ export const mcpClient = new MCPClient({
         url: new URL("https://simple-node-mcp-serv-6a18beb1.alpic.live"),
         requestInit: {
           headers: {
-            'X-RESEND-API-KEY': process.env.RESEND_API_KEY || "",
+            'X-API-KEY': process.env.RESEND_API_KEY || "",
           },
         }
       },
