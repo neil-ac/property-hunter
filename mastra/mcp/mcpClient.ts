@@ -13,10 +13,10 @@ export const mcpClient = new MCPClient({
     id: "mcp-client",
     servers: {
       "resend-email": {
-        url: new URL("https://send-email-mcp-6f0ec13f.alpic.live"),
+        url: new URL("https://simple-node-mcp-serv-6a18beb1.alpic.live"),
         requestInit: {
           headers: {
-            'X-API-KEY': process.env.RESEND_API_KEY || "",
+            'X-RESEND-API-KEY': process.env.RESEND_API_KEY || "",
           },
         }
       },
